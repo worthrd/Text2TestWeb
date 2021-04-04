@@ -1,0 +1,29 @@
+﻿@model Text2TestWebApp.Models.Intent
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container">
+    <div class="row">
+        <form asp-controller="Home" asp-action="TextToTestConverter">
+            <div class="col-sm">
+                <label for="freeTextArea">Please enter your test case</label>
+                <textarea class="form-control" asp-for="Utterance" rows="3" cols="50"></textarea>
+                <input type="submit" class="btn btn-primary" value="Get" />
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+
+            <label>Selenium Test Automation Code</label>
+            <br />
+            @Html.TextAreaFor(model => model.IntentValue, new { @rows = "15", @cols = "50", @style = "color:#603F83FF;background:#C7D3D4FF;" })
+        </div>
+    </div>
+</div>
+
+
+
